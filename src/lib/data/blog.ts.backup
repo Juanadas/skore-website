@@ -1,0 +1,157 @@
+// src/lib/data/blog.ts
+import type { BlogPost, Author } from '@/types';
+
+// Authors
+export const authors: Author[] = [
+  {
+    id: '1',
+    name: 'Dr. Sarah Chen',
+    role: 'Organizational Psychologist',
+    bio: 'Sarah specializes in evidence-based approaches to employee engagement and organizational culture.',
+    social: {
+      linkedin: 'https://linkedin.com/in/sarahchen',
+      twitter: 'https://twitter.com/sarahchen',
+    },
+  },
+  {
+    id: '2',
+    name: 'Michael Rodriguez',
+    role: 'Performance Consultant',
+    bio: 'Michael helps organizations design performance systems that drive results and development.',
+    social: {
+      linkedin: 'https://linkedin.com/in/mrodriguez',
+    },
+  },
+];
+
+// Blog Posts
+export const blogPosts: BlogPost[] = [
+  {
+    id: '1',
+    title: 'The Science of Employee Engagement: What Really Works',
+    slug: 'science-of-employee-engagement',
+    category: 'Engagement',
+    readTime: 8,
+    excerpt: 'Evidence-based strategies for building engagement that actually drive performance and retention.',
+    content: `
+      <p>Employee engagement isn't just a buzzword—it's a critical driver of organizational performance. But what does the research actually say about building engagement?</p>
+      
+      <h2>The Three Key Drivers</h2>
+      <p>Research consistently identifies three core psychological needs that drive engagement:</p>
+      
+      <h3>1. Autonomy</h3>
+      <p>Employees need control over their work methods and schedules. Organizations that provide meaningful autonomy see 23% higher engagement scores.</p>
+      
+      <h3>2. Competence</h3>
+      <p>People need to feel effective and capable. This requires the right balance of challenge and skill, plus regular feedback on progress.</p>
+      
+      <h3>3. Relatedness</h3>
+      <p>Connection to colleagues and the organization's mission matters. Teams with strong social bonds show 50% higher retention.</p>
+      
+      <h2>Practical Applications</h2>
+      <p>To build engagement in your organization, focus on these evidence-based practices:</p>
+      <ul>
+        <li>Provide clear goals with flexibility in execution</li>
+        <li>Offer regular skill development opportunities</li>
+        <li>Create spaces for meaningful team connection</li>
+        <li>Connect individual work to organizational purpose</li>
+      </ul>
+      
+      <p>Remember: engagement isn't built through perks or pizza parties. It requires fundamental changes to how work is designed and managed.</p>
+    `,
+    author: authors[0],
+    publishedAt: new Date('2024-11-15'),
+    tags: ['engagement', 'organizational psychology', 'performance', 'employee experience'],
+    image: '/images/blog/engagement-science.jpg',
+  },
+  {
+    id: '2',
+    title: 'Beyond Annual Reviews: Modern Performance Management',
+    slug: 'modern-performance-management',
+    category: 'Performance',
+    readTime: 10,
+    excerpt: 'Why traditional performance reviews fail and what progressive organizations are doing instead.',
+    content: `
+      <p>The traditional annual performance review is dying—and for good reason. Research shows they're often ineffective and can actually harm performance.</p>
+      
+      <h2>What's Wrong with Traditional Reviews?</h2>
+      <p>Studies have identified several critical flaws:</p>
+      <ul>
+        <li>Recency bias distorts ratings</li>
+        <li>Annual feedback is too infrequent to drive learning</li>
+        <li>Forced rankings damage team collaboration</li>
+        <li>The process creates anxiety that impairs cognitive function</li>
+      </ul>
+      
+      <h2>The Alternative: Continuous Performance Development</h2>
+      <p>Progressive organizations are shifting to continuous performance development with three key components:</p>
+      
+      <h3>1. Frequent Check-ins</h3>
+      <p>Replace annual reviews with monthly or bi-weekly conversations focused on progress, obstacles, and development.</p>
+      
+      <h3>2. Forward-Looking Feedback</h3>
+      <p>Focus discussions on future performance and growth rather than dwelling on past performance.</p>
+      
+      <h3>3. Separation of Development and Compensation</h3>
+      <p>Decouple developmental conversations from pay decisions to create psychological safety.</p>
+      
+      <h2>Implementation Tips</h2>
+      <p>Making this shift successfully requires:</p>
+      <ul>
+        <li>Training managers in coaching skills</li>
+        <li>Creating simple, repeatable conversation frameworks</li>
+        <li>Building accountability for regular check-ins</li>
+        <li>Measuring quality of conversations, not just frequency</li>
+      </ul>
+    `,
+    author: authors[1],
+    publishedAt: new Date('2024-11-20'),
+    tags: ['performance management', 'feedback', 'coaching', 'talent management'],
+    image: '/images/blog/performance-reviews.jpg',
+  },
+  {
+    id: '3',
+    title: 'The Psychology of Organizational Change: Why Most Initiatives Fail',
+    slug: 'psychology-of-change',
+    category: 'Change Management',
+    readTime: 12,
+    excerpt: 'Understanding the psychological barriers to change and evidence-based strategies to overcome them.',
+    content: `
+      <p>Research shows that 70% of organizational change initiatives fail. But it's not for lack of trying—it's because we ignore the psychology of change.</p>
+      
+      <h2>The Three Psychological Barriers</h2>
+      
+      <h3>1. Loss Aversion</h3>
+      <p>People experience losses about twice as intensely as gains. Even positive changes feel threatening because of what might be lost.</p>
+      
+      <h3>2. Status Quo Bias</h3>
+      <p>Our brains are wired to prefer familiar patterns. Change requires cognitive effort our brains naturally resist.</p>
+      
+      <h3>3. Identity Threat</h3>
+      <p>Change often challenges people's sense of competence and identity, triggering defensive responses.</p>
+      
+      <h2>Evidence-Based Change Strategies</h2>
+      
+      <h3>Make the Case for Change</h3>
+      <p>Don't just communicate what's changing—help people understand why the status quo is untenable.</p>
+      
+      <h3>Create Small Wins</h3>
+      <p>Break large changes into smaller milestones that people can achieve quickly, building momentum and confidence.</p>
+      
+      <h3>Build Change Coalitions</h3>
+      <p>Identify and empower informal leaders who can model and advocate for the change across the organization.</p>
+      
+      <h3>Provide Psychological Safety</h3>
+      <p>People need to feel safe to experiment with new behaviors and admit when they're struggling with the transition.</p>
+      
+      <h2>The Role of Leadership</h2>
+      <p>Leaders must model vulnerability and learning during change. When leaders openly discuss their own challenges with new ways of working, it gives others permission to do the same.</p>
+    `,
+    author: authors[0],
+    publishedAt: new Date('2024-12-01'),
+    tags: ['change management', 'organizational change', 'leadership', 'psychology'],
+    image: '/images/blog/organizational-change.jpg',
+  },
+];
+
+export default blogPosts;

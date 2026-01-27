@@ -1,0 +1,76 @@
+{
+  "resources": [
+    {
+      "id": "res_001",
+      "title": "Employee Engagement Survey Template",
+      "slug": "employee-engagement-survey",
+      "category": "assessment",
+      "type": "Survey Template",
+      "status": "placeholder",
+      "description": "Comprehensive 40-question survey based on validated organizational science research to measure employee engagement across 8 key dimensions.",
+      "pages": 12,
+      "fileSize": "1.8 MB",
+      "filePath": "/downloads/assessment/employee-engagement-survey.pdf",
+      "previewImage": "/images/resources/employee-engagement-survey.jpg",
+      "difficulty": "Intermediate",
+      "timeToComplete": "45 minutes to deploy",
+      "featured": true,
+      "includes": [
+        "40 research-backed survey questions",
+        "Question rationale and scoring guide",
+        "Results interpretation framework",
+        "Action planning template",
+        "Benchmark data from 500+ organizations",
+        "Digital survey template (Google Forms ready)"
+      ],
+      "tags": ["engagement", "survey", "assessment", "HR"],
+      "relatedResources": ["res_002", "res_007"],
+      "lastUpdated": "2025-01-25",
+      "notes": "Pendiente: Crear PDF real con las 40 preguntas validadas"
+    },
+    {
+      "id": "res_002",
+      "title": "Organizational Culture Assessment",
+      "slug": "organizational-culture-assessment",
+      "category": "assessment",
+      "type": "Assessment Tool",
+      "status": "placeholder",
+      "description": "Diagnose your organizational culture using the Competing Values Framework. Identify cultural strengths and misalignments.",
+      "pages": 18,
+      "fileSize": "2.3 MB",
+      "filePath": "/downloads/assessment/organizational-culture-assessment.pdf",
+      "difficulty": "Advanced",
+      "timeToComplete": "2-3 hours for full analysis",
+      "featured": true,
+      "includes": [
+        "Complete CVF assessment instrument",
+        "Scoring and plotting guide",
+        "Culture type descriptions and implications",
+        "Gap analysis framework",
+        "Culture change roadmap template",
+        "Case studies from 3 organizations"
+      ],
+      "tags": ["culture", "assessment", "change management"],
+      "relatedResources": ["res_001", "res_012"],
+      "lastUpdated": "2025-01-25",
+      "notes": "Pendiente: Añadir casos de estudio reales"
+    }
+  ],
+  "_metadata": {
+    "version": "1.0",
+    "lastUpdated": "2025-01-25",
+    "totalResources": 12,
+    "placeholders": 12,
+    "completed": 0,
+    "instructions": {
+      "howToAdd": "Para añadir un nuevo recurso, copia un objeto resource existente y actualiza todos los campos",
+      "requiredFiles": [
+        "PDF del recurso en public/downloads/[category]/",
+        "Imagen preview en public/images/resources/ (opcional)",
+        "Actualizar totalResources y contadores"
+      ],
+      "status": "Valores permitidos: placeholder, draft, review, published",
+      "categories": "assessment, performance, design, learning, change"
+    }
+  }
+}

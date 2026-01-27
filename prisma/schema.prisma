@@ -1,0 +1,146 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Recursos descargables
+model Resource {
+  id                  String     @id @default(cuid())
+  title               String
+  slug                String     @unique
+  category            String
+  type                String
+  description         String     @db.Text
+  detailedDescription String?    @db.Text
+  function            String
+  pages               Int
+  format              String     @default("PDF")
+  fileSize            String?
+  filePath            String
+  previewImage        String?
+  includes            String[]
+  tags                String[]
+  featured            Boolean    @default(false)
+  difficulty          String?
+  timeToComplete      String?
+  relatedResourceIds  String[]
+  downloads           Download[]
+  createdAt           DateTime   @default(now())
+  updatedAt           DateTime   @updatedAt
+
+  @@index([category])
+  @@index([slug])
+  @@index([featured])
+}
+
+// Descargas (registro de cada descarga)
+model Download {
+  id           String   @id @default(cuid())
+  email        String
+  name         String?
+  company      String?
+  resourceId   String
+  resource     Resource @relation(fields: [resourceId], references: [id], onDelete: Cascade)
+  ipAddress    String?
+  userAgent    String?  @db.Text
+  subscribe    Boolean  @default(false)
+  downloadedAt DateTime @default(now())
+
+  @@index([email])
+  @@index([resourceId])
+  @@index([downloadedAt])
+}
+
+// Subscribers del newsletter
+model Subscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  status    String   @default("active") // active, unsubscribed, bounced
+  source    String?  // newsletter, download, contact
+  tags      String[]
+  metadata  Json?    // Información adicional flexible
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@index([status])
+}
+
+// Posts del blog
+model BlogPost {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  category    String
+  readTime    Int
+  excerpt     String   @db.Text
+  content     String   @db.Text
+  coverImage  String?
+  authorId    String
+  author      Author   @relation(fields: [authorId], references: [id])
+  publishedAt DateTime
+  updatedAt   DateTime @updatedAt
+  tags        String[]
+  featured    Boolean  @default(false)
+  views       Int      @default(0)
+  createdAt   DateTime @default(now())
+
+  @@index([slug])
+  @@index([authorId])
+  @@index([publishedAt])
+  @@index([featured])
+}
+
+// Autores
+model Author {
+  id        String     @id @default(cuid())
+  name      String
+  role      String
+  bio       String?    @db.Text
+  avatar    String?
+  social    Json?      // { twitter, linkedin, website }
+  posts     BlogPost[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@index([name])
+}
+
+// Mensajes de contacto
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  company   String?
+  message   String   @db.Text
+  status    String   @default("new") // new, read, replied, archived
+  ipAddress String?
+  userAgent String?  @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+}
+
+// Analytics y métricas
+model PageView {
+  id         String   @id @default(cuid())
+  path       String
+  referrer   String?
+  userAgent  String?  @db.Text
+  ipAddress  String?
+  country    String?
+  viewedAt   DateTime @default(now())
+
+  @@index([path])
+  @@index([viewedAt])
+}
