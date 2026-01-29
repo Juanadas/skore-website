@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://skore.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://skore-website.vercel.app'),
   title: {
     default: 'SKORE - Evidence-Based Organizational Tools',
     template: '%s | SKORE',
@@ -27,10 +27,33 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'SKORE' }],
   creator: 'SKORE',
+  
+  // Favicon y App Icons
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#2563eb' },
+    ],
+  },
+  
+  // Manifest para PWA
+  manifest: '/site.webmanifest',
+  
+  // Theme color
+  themeColor: '#2563eb',
+  
+  // Open Graph
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://skore.com',
+    url: 'https://skore-website.vercel.app',
     siteName: 'SKORE',
     title: 'SKORE - Evidence-Based Organizational Tools',
     description: 'Translating organizational science into practical tools you can use Monday morning.',
@@ -39,10 +62,12 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'SKORE',
+        alt: 'SKORE - Evidence-Based Organizational Tools',
       },
     ],
   },
+  
+  // Twitter Card
   twitter: {
     card: 'summary_large_image',
     title: 'SKORE - Evidence-Based Organizational Tools',
@@ -50,6 +75,8 @@ export const metadata: Metadata = {
     images: ['/og-image.jpg'],
     creator: '@skore',
   },
+  
+  // Robots
   robots: {
     index: true,
     follow: true,
@@ -61,6 +88,12 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  
+  // Verification tags (añadir cuando tengas)
+  // verification: {
+  //   google: 'tu-codigo-de-verificacion',
+  //   yandex: 'tu-codigo-de-verificacion',
+  // },
 };
 
 export default function RootLayout({
@@ -70,7 +103,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="min-h-screen flex flex-col">
+      <head>
+        {/* Preload del logo para mejor performance */}
+        <link
+          rel="preload"
+          href="/images/logo.svg"
+          as="image"
+          type="image/svg+xml"
+        />
+      </head>
+      <body className="min-h-screen flex flex-col antialiased">
         <Navigation />
         
         {/* Main content with padding for fixed nav */}

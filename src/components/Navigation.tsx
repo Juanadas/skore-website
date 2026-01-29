@@ -34,7 +34,14 @@ export function Navigation() {
             href="/" 
             className="text-2xl font-bold text-primary-600 hover:text-primary-700 transition-colors"
           >
-            SKORE
+            <Link href="/" className="flex items-center gap-2">
+  <img 
+    src="/images/logo.svg" 
+    alt="SKORE" 
+    className="h-8 w-auto"
+  />
+  <span className="text-xl font-bold text-gray-900">SKORE</span>
+</Link>
           </Link>
 
           {/* Desktop Navigation */}
