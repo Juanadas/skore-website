@@ -26,22 +26,17 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-secondary-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link 
-            href="/" 
-            className="text-2xl font-bold text-primary-600 hover:text-primary-700 transition-colors"
-          >
-            <Link href="/" className="flex items-center gap-2">
-  <img 
-    src="/images/logo.svg" 
-    alt="SKORE" 
-    className="h-8 w-auto"
-  />
-  <span className="text-xl font-bold text-gray-900">SKORE</span>
-</Link>
+          <Link href="/" className="flex items-center gap-2">
+            <img 
+              src="/images/logo.svg" 
+              alt="SKORE" 
+              className="h-8 w-auto"
+            />
+            <span className="text-xl font-bold text-gray-900">SKORE</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -53,13 +48,13 @@ export function Navigation() {
                 className={cn(
                   'text-sm font-medium transition-colors relative',
                   isActive(link.href)
-                    ? 'text-primary-600'
-                    : 'text-secondary-600 hover:text-secondary-900'
+                    ? 'text-blue-600'
+                    : 'text-gray-600 hover:text-gray-900'
                 )}
               >
                 {link.label}
                 {isActive(link.href) && (
-                  <span className="absolute -bottom-[21px] left-0 right-0 h-0.5 bg-primary-600" />
+                  <span className="absolute -bottom-[21px] left-0 right-0 h-0.5 bg-blue-600" />
                 )}
               </Link>
             ))}
@@ -68,7 +63,7 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg text-secondary-600 hover:bg-secondary-100 transition-colors"
+            className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
             aria-label="Toggle menu"
             aria-expanded={isOpen}
           >
@@ -79,7 +74,7 @@ export function Navigation() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden border-t border-secondary-200 bg-white animate-slide-down">
+        <div className="md:hidden border-t border-gray-200 bg-white animate-slide-down">
           <div className="px-4 py-4 space-y-2">
             {navLinks.map((link) => (
               <Link
@@ -89,8 +84,8 @@ export function Navigation() {
                 className={cn(
                   'block px-4 py-3 rounded-lg text-base font-medium transition-colors',
                   isActive(link.href)
-                    ? 'bg-primary-50 text-primary-600'
-                    : 'text-secondary-700 hover:bg-secondary-50'
+                    ? 'bg-blue-50 text-blue-600'
+                    : 'text-gray-700 hover:bg-gray-50'
                 )}
               >
                 {link.label}
