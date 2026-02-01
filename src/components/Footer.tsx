@@ -1,7 +1,4 @@
-'use client';
-
 import Link from 'next/link';
-import { NewsletterForm } from './NewsletterForm';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -80,7 +77,9 @@ export function Footer() {
             <p className="text-gray-400 text-sm mb-4">
               Get new resources and insights delivered to your inbox.
             </p>
-            <NewsletterForm />
+            <p className="text-xs text-gray-500">
+              Newsletter coming soon!
+            </p>
           </div>
         </div>
 
