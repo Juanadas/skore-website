@@ -1,6 +1,8 @@
 // src/app/resources/[slug]/page.tsx
+'use client';
+
+import { useState } from 'react';
 import { notFound } from 'next/navigation';
-import { Metadata } from 'next';
 import { Download, FileText, Clock, BarChart } from 'lucide-react';
 import { getResourceById } from '@/lib/data/resources';
 import { DownloadModal } from '@/components/DownloadModal';
@@ -11,36 +13,9 @@ interface ResourcePageProps {
   };
 }
 
-export async function generateMetadata({ params }: ResourcePageProps): Promise<Metadata> {
-  const resource = getResourceById(params.slug);
-
-  if (!resource) {
-    return {
-      title: 'Resource Not Found',
-    };
-  }
-
-  return {
-    title: resource.title,
-    description: resource.description,
-    keywords: resource.tags,
-    openGraph: {
-      title: resource.title,
-      description: resource.description,
-      type: 'article',
-      images: resource.previewImage ? [resource.previewImage] : [],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: resource.title,
-      description: resource.description,
-      images: resource.previewImage ? [resource.previewImage] : [],
-    },
-  };
-}
-
 export default function ResourcePage({ params }: ResourcePageProps) {
   const resource = getResourceById(params.slug);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   if (!resource) {
     notFound();
@@ -176,12 +151,25 @@ export default function ResourcePage({ params }: ResourcePageProps) {
                   </div>
                 )}
 
-                <DownloadModal resource={resource} />
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                >
+                  <Download size={20} />
+                  Download Now
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Download Modal */}
+      <DownloadModal
+        resource={resource}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </>
   );
 }
