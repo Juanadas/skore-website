@@ -90,10 +90,9 @@ export const metadata: Metadata = {
   },
   
   // Verification tags (añadir cuando tengas)
-  // verification: {
-  //   google: '<meta name="google-site-verification" content="_PfWPLQuMHBZ85miod0ljwSoGWhyS7ySDVlwwLPEwiQ" />',
-  //   yandex: 'tu-codigo-de-verificacion',
-  // },
+  verification: {
+    google: '_PfWPLQuMHBZ85miod0ljwSoGWhyS7ySDVlwwLPEwiQ',
+  },
 };
 
 export default function RootLayout({
@@ -104,6 +103,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <meta name="google-site-verification" content="_PfWPLQuMHBZ85miod0ljwSoGWhyS7ySDVlwwLPEwiQ" />
+
         {/* Preload del logo para mejor performance */}
         <link
           rel="preload"
