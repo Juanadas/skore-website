@@ -91,7 +91,7 @@ export const metadata: Metadata = {
   
   // Verification tags (añadir cuando tengas)
   // verification: {
-  //   google: 'tu-codigo-de-verificacion',
+  //   google: '<meta name="google-site-verification" content="_PfWPLQuMHBZ85miod0ljwSoGWhyS7ySDVlwwLPEwiQ" />',
   //   yandex: 'tu-codigo-de-verificacion',
   // },
 };
