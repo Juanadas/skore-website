@@ -75,14 +75,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Connect - MODIFICADO: Eliminado Newsletter, añadido LinkedIn */}
+          {/* Connect */}
           <div>
             <h3 className="font-semibold text-white mb-4">Connect</h3>
             <p className="text-gray-400 text-sm mb-4">
               Follow us and get in touch.
             </p>
             <div className="flex gap-4">
-              
+              <a
                 href="https://www.linkedin.com/company/skore-frameworks"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -91,7 +91,7 @@ export function Footer() {
               >
                 <Linkedin size={20} />
               </a>
-              
+              <a
                 href="mailto:contact@skore.com"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Email"
