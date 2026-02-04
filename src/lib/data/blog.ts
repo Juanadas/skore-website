@@ -4,34 +4,30 @@ import type { BlogPost, Author } from '@/types';
 export const authors: Author[] = [
   {
     id: '1',
-    name: 'Dr. Sarah Chen',
+    name: 'Juan Vizcaíno Lara',
     role: 'Organizational Psychologist',
-    bio: 'Sarah specializes in evidence-based approaches to employee engagement and organizational culture.',
-    avatar: '/images/authors/sarah.jpg',
+    bio: 'By Juan · Founder of SKORE frameworks.',
+    avatar: '/images/authors/juan.jpg',
     social: {
-      twitter: 'https://twitter.com/sarahchen',
-      linkedin: 'https://linkedin.com/in/sarahchen',
+      linkedin: 'https://linkedin.com/in/vizcaino-juan',
     },
   },
   {
     id: '2',
-    name: 'Michael Rodriguez',
-    role: 'Performance Consultant',
-    bio: 'Michael helps organizations design performance systems that drive results and development.',
-    avatar: '/images/authors/michael.jpg',
+    name: 'Juan Vizcaíno Lara',
+    role: 'Organizational Psychologist',
+    bio: 'By Juan · Founder of SKORE frameworks.',
+    avatar: '/images/authors/juan.jpg',
     social: {
-      linkedin: 'https://linkedin.com/in/mrodriguez',
+      linkedin: 'https://linkedin.com/in/vizcaino-juan',
     },
   },
-  {
-    id: '3',
-    name: 'Dr. Emily Watson',
-    role: 'Change Management Specialist',
-    bio: 'Emily researches and consults on successful organizational transformation initiatives.',
-    avatar: '/images/authors/emily.jpg',
+  name: 'Juan Vizcaíno Lara',
+    role: 'Organizational Psychologist',
+    bio: 'By Juan · Founder of SKORE frameworks.',
+    avatar: '/images/authors/juan.jpg',
     social: {
-      twitter: 'https://twitter.com/emilywatson',
-      linkedin: 'https://linkedin.com/in/emilywatson',
+      linkedin: 'https://linkedin.com/in/vizcaino-juan',
     },
   },
 ];

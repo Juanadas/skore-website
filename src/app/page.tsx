@@ -142,7 +142,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-secondary-900 mb-4">
-              Why SKORE?
+              Why SKORE frameworks?
             </h2>
             <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
               The gap between organizational science and practice is too wide. We're closing it.

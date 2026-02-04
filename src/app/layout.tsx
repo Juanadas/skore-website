@@ -13,8 +13,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://skore-website.vercel.app'),
   title: {
-    default: 'SKORE - Evidence-Based Organizational Tools',
-    template: '%s | SKORE',
+    default: 'SKORE frameworks - Evidence-Based Organizational Tools',
+    template: '%s | SKORE frameworks',
   },
   description: 'Translating organizational science into practical tools you can use Monday morning. Free resources for HR professionals, managers, and organizational leaders.',
   keywords: [
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     'organizational effectiveness',
     'evidence-based management',
   ],
-  authors: [{ name: 'SKORE' }],
-  creator: 'SKORE',
+  authors: [{ name: 'Juan Vizcaíno Lara' }],
+  creator: 'SKORE frameworks',
   
   // Favicon y App Icons
   icons: {
@@ -54,15 +54,15 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://skore-website.vercel.app',
-    siteName: 'SKORE',
-    title: 'SKORE - Evidence-Based Organizational Tools',
+    siteName: 'SKORE frameworks',
+    title: 'SKORE frameworks - Evidence-Based Organizational Tools',
     description: 'Translating organizational science into practical tools you can use Monday morning.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'SKORE - Evidence-Based Organizational Tools',
+        alt: 'SKORE frameworks - Evidence-Based Organizational Tools',
       },
     ],
   },
@@ -70,10 +70,10 @@ export const metadata: Metadata = {
   // Twitter Card
   twitter: {
     card: 'summary_large_image',
-    title: 'SKORE - Evidence-Based Organizational Tools',
+    title: 'SKORE frameworks - Evidence-Based Organizational Tools',
     description: 'Translating organizational science into practical tools you can use Monday morning.',
     images: ['/og-image.jpg'],
-    creator: '@skore',
+    creator: '@skore-frameworks',
   },
   
   // Robots

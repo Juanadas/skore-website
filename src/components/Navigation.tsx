@@ -1,5 +1,4 @@
 'use client';
-
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -33,10 +32,13 @@ export function Navigation() {
           <Link href="/" className="flex items-center gap-2">
             <img 
               src="/images/logo.svg" 
-              alt="SKORE" 
+              alt="SKORE frameworks" 
               className="h-8 w-auto"
             />
-            <span className="text-xl font-bold text-gray-900">SKORE</span>
+            <div className="flex items-baseline gap-1">
+              <span className="text-xl font-bold text-gray-900">SKORE</span>
+              <span className="text-xl font-light text-gray-600">frameworks</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
