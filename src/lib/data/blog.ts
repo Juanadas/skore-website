@@ -22,7 +22,10 @@ export const authors: Author[] = [
       linkedin: 'https://linkedin.com/in/vizcaino-juan',
     },
   },
-  name: 'Juan Vizcaíno Lara',
+
+  {
+    id: '3',
+    name: 'Juan Vizcaíno Lara',
     role: 'Organizational Psychologist',
     bio: 'By Juan · Founder of SKORE frameworks.',
     avatar: '/images/authors/juan.jpg',
