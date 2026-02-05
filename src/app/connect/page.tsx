@@ -169,12 +169,12 @@ export default function ConnectPage() {
                       LinkedIn
                     </h4>
                     <a
-                      href="https://linkedin.com/company/skore-frameworks"
+                      href="https://linkedin.com/company/skoreframeworks"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary-600 hover:text-primary-700 transition-colors"
                     >
-                      @skore-frameworks
+                      @skoreframeworks
                     </a>
                   </div>
 
