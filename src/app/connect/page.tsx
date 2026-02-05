@@ -156,10 +156,10 @@ export default function ConnectPage() {
                       Email
                     </h4>
                     <a
-                      href="mailto:hello@skore.com"
+                      href="mailto:skoreframeworks@gmail.com"
                       className="text-primary-600 hover:text-primary-700 transition-colors"
                     >
-                      hello@skore.com
+                      skoreframeworks@gmail.com
                     </a>
                   </div>
 
@@ -169,29 +169,16 @@ export default function ConnectPage() {
                       LinkedIn
                     </h4>
                     <a
-                      href="https://linkedin.com/company/skore"
+                      href="https://linkedin.com/company/skore-frameworks"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary-600 hover:text-primary-700 transition-colors"
                     >
-                      @skore
+                      @skore-frameworks
                     </a>
                   </div>
 
-                  <div>
-                    <h4 className="font-semibold text-secondary-900 mb-2 flex items-center gap-2">
-                      <Twitter size={20} className="text-primary-600" />
-                      Twitter
-                    </h4>
-                    <a
-                      href="https://twitter.com/skore"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary-600 hover:text-primary-700 transition-colors"
-                    >
-                      @skore
-                    </a>
-                  </div>
+                  
                 </div>
               </div>
 
