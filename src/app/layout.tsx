@@ -13,8 +13,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://skore-website.vercel.app'),
   title: {
-    default: 'SKORE frameworks - Evidence-Based Organizational Tools',
-    template: '%s | SKORE frameworks',
+    default: 'SKORE - Evidence-Based Organizational Tools',
+    template: '%s | SKORE',
   },
   description: 'Translating organizational science into practical tools you can use Monday morning. Free resources for HR professionals, managers, and organizational leaders.',
   keywords: [
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     'organizational effectiveness',
     'evidence-based management',
   ],
-  authors: [{ name: 'Juan Vizcaíno Lara' }],
-  creator: 'SKORE frameworks',
+  authors: [{ name: 'SKORE' }],
+  creator: 'SKORE',
   
   // Favicon y App Icons
   icons: {
@@ -54,15 +54,15 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://skore-website.vercel.app',
-    siteName: 'SKORE frameworks',
-    title: 'SKORE frameworks - Evidence-Based Organizational Tools',
+    siteName: 'SKORE',
+    title: 'SKORE - Evidence-Based Organizational Tools',
     description: 'Translating organizational science into practical tools you can use Monday morning.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'SKORE frameworks - Evidence-Based Organizational Tools',
+        alt: 'SKORE - Evidence-Based Organizational Tools',
       },
     ],
   },
@@ -70,10 +70,10 @@ export const metadata: Metadata = {
   // Twitter Card
   twitter: {
     card: 'summary_large_image',
-    title: 'SKORE frameworks - Evidence-Based Organizational Tools',
+    title: 'SKORE - Evidence-Based Organizational Tools',
     description: 'Translating organizational science into practical tools you can use Monday morning.',
     images: ['/og-image.jpg'],
-    creator: '@skore-frameworks',
+    creator: '@skore',
   },
   
   // Robots
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     },
   },
   
-  // Verification tags (añadir cuando tengas)
+  // Verification tags
   verification: {
     google: '_PfWPLQuMHBZ85miod0ljwSoGWhyS7ySDVlwwLPEwiQ',
   },
@@ -103,8 +103,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        <meta name="google-site-verification" content="_PfWPLQuMHBZ85miod0ljwSoGWhyS7ySDVlwwLPEwiQ" />
-
         {/* Preload del logo para mejor performance */}
         <link
           rel="preload"
@@ -113,7 +111,10 @@ export default function RootLayout({
           type="image/svg+xml"
         />
       </head>
-      <body className="min-h-screen flex flex-col antialiased">
+      <body 
+        className="min-h-screen flex flex-col antialiased"
+        suppressHydrationWarning
+      >
         <Navigation />
         
         {/* Main content with padding for fixed nav */}
