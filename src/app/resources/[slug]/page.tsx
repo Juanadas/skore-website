@@ -5,13 +5,12 @@ import { getResourceById } from '@/lib/data/resources';
 import { ResourceDetailClient } from './ResourceDetailClient';
 
 interface ResourcePageProps {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 }
 
-export default function ResourcePage({ params }: ResourcePageProps) {
-  const resource = getResourceById(params.slug);
+export default async function ResourcePage({ params }: ResourcePageProps) {
+  const { slug } = await params;
+  const resource = getResourceById(slug);
 
   if (!resource) {
     notFound();
