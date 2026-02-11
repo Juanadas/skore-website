@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
@@ -46,9 +46,6 @@ export const metadata: Metadata = {
   // Manifest para PWA
   manifest: '/site.webmanifest',
   
-  // Theme color
-  themeColor: '#2563eb',
-  
   // Open Graph
   openGraph: {
     type: 'website',
@@ -93,6 +90,10 @@ export const metadata: Metadata = {
   verification: {
     google: '_PfWPLQuMHBZ85miod0ljwSoGWhyS7ySDVlwwLPEwiQ',
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#2563eb',
 };
 
 export default function RootLayout({
