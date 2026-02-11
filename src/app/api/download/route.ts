@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import fs from 'fs/promises';
 import path from 'path';
-// import { prisma } from '@/lib/db/prisma'; // Temporalmente deshabilitado
+import { prisma } from '@/lib/db/prisma';
 
 // Validation schema
 const downloadSchema = z.object({
@@ -80,8 +80,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Guardar en base de datos (temporalmente deshabilitado)
-    /*
+    // Guardar en base de datos
     try {
       const download = await prisma.download.create({
         data: {
@@ -89,9 +88,10 @@ export async function POST(request: NextRequest) {
           name,
           company,
           resourceId: resource.id,
-          ipAddress: request.headers.get('x-forwarded-for') || 
-                     request.headers.get('x-real-ip') || 
-                     'unknown',
+          ipAddress:
+            request.headers.get('x-forwarded-for') ||
+            request.headers.get('x-real-ip') ||
+            'unknown',
           userAgent: request.headers.get('user-agent') || 'unknown',
           subscribe,
         },
@@ -102,7 +102,6 @@ export async function POST(request: NextRequest) {
       console.error('Failed to save download to database:', dbError);
       // Continuar aunque falle el guardado en DB
     }
-    */
     
     console.log('Download request:', { email, name, resourceId: resource.id });
 
@@ -122,21 +121,21 @@ export async function POST(request: NextRequest) {
 
     // Si subscribe=true, guardar subscriber y enviar email de bienvenida
     if (subscribe) {
-      // Guardar subscriber (temporalmente deshabilitado)
-      /*
+      // Guardar subscriber
       try {
         await prisma.subscriber.upsert({
           where: { email },
           update: {
             name,
             status: 'active',
-            updatedAt: new Date(),
+            source: 'download',
           },
           create: {
             email,
             name,
             source: 'download',
             status: 'active',
+            tags: [],
           },
         });
         
@@ -144,8 +143,7 @@ export async function POST(request: NextRequest) {
       } catch (dbError) {
         console.error('Failed to save subscriber:', dbError);
       }
-      */
-      
+
       console.log('New subscriber:', { email, name, source: 'download' });
       
       // Enviar email de bienvenida

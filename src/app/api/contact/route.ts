@@ -2,6 +2,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { sendContactNotification } from '@/lib/emails/send';
+import { prisma } from '@/lib/db/prisma';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -55,20 +56,25 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // TODO: Guardar en base de datos
-    const submission = {
-      id: `contact_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      name,
-      email,
-      company,
-      message,
-      status: 'new',
-      ipAddress: ip,
-      userAgent: request.headers.get('user-agent') || 'unknown',
-      createdAt: new Date().toISOString(),
-    };
+    // Guardar en base de datos
+    try {
+      const submission = await prisma.contactSubmission.create({
+        data: {
+          name,
+          email,
+          company,
+          message,
+          status: 'new',
+          ipAddress: ip,
+          userAgent: request.headers.get('user-agent') || 'unknown',
+        },
+      });
 
-    console.log('New contact submission:', submission);
+      console.log('New contact submission saved:', submission.id);
+    } catch (dbError) {
+      console.error('Failed to save contact submission:', dbError);
+      // Continuar aunque falle el guardado en DB
+    }
 
     // Enviar notificación por email
     try {

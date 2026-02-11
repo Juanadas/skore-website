@@ -4,9 +4,11 @@ import { useState } from 'react';
 import { Mail, Linkedin, Twitter, Send } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
+import { NewsletterForm } from '@/components/NewsletterForm';
+import type { ContactFormData } from '@/types';
 
 export default function ConnectPage() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     company: '',
@@ -14,22 +16,42 @@ export default function ConnectPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      const data = await response.json();
 
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({ name: '', email: '', company: '', message: '' });
-      setIsSubmitted(false);
-    }, 3000);
+      if (!response.ok) {
+        setErrorMessage(data.error || 'Something went wrong');
+        setIsSubmitting(false);
+        return;
+      }
+
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setFormData({ name: '', email: '', company: '', message: '' });
+        setIsSubmitted(false);
+      }, 3000);
+    } catch {
+      setIsSubmitting(false);
+      setErrorMessage('Failed to send your message. Please try again.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -137,6 +159,12 @@ export default function ConnectPage() {
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                     <Send size={20} />
                   </Button>
+
+                  {errorMessage && (
+                    <p className="text-sm text-red-600">
+                      {errorMessage}
+                    </p>
+                  )}
                 </form>
               )}
             </div>
@@ -238,19 +266,12 @@ export default function ConnectPage() {
             <p className="text-xl text-blue-100 mb-8">
               Get notified when we release new resources and articles.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg text-secondary-900 focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <Button size="lg" className="bg-white text-primary-600 hover:bg-blue-50">
-                Subscribe
-              </Button>
+            <div className="max-w-md mx-auto">
+              <NewsletterForm />
+              <p className="text-sm text-blue-200 mt-4">
+                No spam. Unsubscribe anytime.
+              </p>
             </div>
-            <p className="text-sm text-blue-200 mt-4">
-              No spam. Unsubscribe anytime.
-            </p>
           </div>
         </div>
       </section>

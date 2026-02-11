@@ -2,6 +2,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { sendWelcomeEmail } from '@/lib/emails/send';
+import { prisma } from '@/lib/db/prisma';
 
 const subscribeSchema = z.object({
   email: z.string().email('Invalid email address'),
@@ -46,17 +47,29 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // TODO: Guardar en base de datos
-    const subscriber = {
-      id: `sub_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      email,
-      name,
-      source: 'newsletter',
-      status: 'active',
-      createdAt: new Date().toISOString(),
-    };
+  // Guardar en base de datos
+  try {
+    const subscriber = await prisma.subscriber.upsert({
+      where: { email },
+      update: {
+        name,
+        status: 'active',
+        source: 'newsletter',
+      },
+      create: {
+        email,
+        name,
+        status: 'active',
+        source: 'newsletter',
+        tags: [],
+      },
+    });
 
-    console.log('New subscriber:', subscriber);
+    console.log('New subscriber saved:', subscriber.email);
+  } catch (dbError) {
+    console.error('Failed to save subscriber:', dbError);
+    // Continuar aunque falle el guardado en DB
+  }
 
     // Enviar email de bienvenida
     try {

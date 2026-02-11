@@ -6,7 +6,7 @@ import { X, Download, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import type { Resource } from '@/types';
+import type { Resource, DownloadFormData } from '@/types';
 
 const downloadFormSchema = z.object({
   email: z.string().email('Please enter a valid email address'),
@@ -14,8 +14,6 @@ const downloadFormSchema = z.object({
   company: z.string().optional(),
   subscribe: z.boolean().default(true),
 });
-
-type DownloadFormData = z.infer<typeof downloadFormSchema>;
 
 interface DownloadModalProps {
   resource: Resource;
