@@ -1115,4 +1115,79 @@ export const blogPosts: BlogPost[] = [
       </p>
     `,
   },
+
+  // POST 7 — DEI
+  {
+    id: '7',
+    title: 'The Three Things We Call Feedback (And Why Confusing Them Keeps Organizations Stuck)',
+    slug: 'three-functions-of-feedback',
+    category: 'Performance',
+    readTime: 8,
+    excerpt: 'Most organizations treat feedback as a single thing — a skill to improve, a culture to build, a conversation to have better. But behavioral science distinguishes at least three distinct functions that we routinely collapse into one. That collapse is expensive.',
+    tags: ['feedback', 'behavioral science', 'performance management', 'HR fundamentals', 'organizational design'],
+    featured: false,
+    publishedAt: new Date('2026-03-31'),
+    author: authors[0],
+    content: `
+      <p class="post-intro">Ask ten HR professionals what good feedback looks like and you'll get ten versions of the same answer: specific, timely, constructive, delivered with empathy. The advice is consistent. The results, in most organizations, are not.</p>
+ 
+      <p>Engagement surveys flag feedback quality as a persistent problem year after year. Training programs improve scores temporarily and then fade. Managers who attend feedback workshops return to their desks and, within a few weeks, largely revert. If the advice is good and widely distributed, why doesn't the problem improve?</p>
+ 
+      <p>One answer — probably the most underexplored one — is that we've been treating feedback as a single thing when it's actually three distinct things that work through different mechanisms, require different timing, and fail in different ways when misapplied.</p>
+ 
+      <hr class="post-divider" />
+ 
+      <h2>What Behavioral Science Actually Means by Feedback</h2>
+ 
+      <p>In organizational psychology and behavioral science, feedback is defined not by its content but by its function: an environmental event that changes the probability of a behavior occurring again. By that definition, most of what organizations call feedback — the annual review, the performance conversation, the quarterly development chat — isn't feedback in any technically meaningful sense. It's evaluation. Documentation. Communication. All useful things, but different things.</p>
+ 
+      <p>True feedback, in the behavioral sense, requires a visible connection between a specific behavior and what followed it. Without that connection — clear, proximate, attributable — the event may inform, but it doesn't shape. And shaping behavior is, presumably, the point.</p>
+ 
+      <hr class="post-divider" />
+ 
+      <h2>The First Function: Reinforcement</h2>
+ 
+      <p>The most familiar function of feedback is reinforcement — increasing the likelihood that a behavior will recur. When a manager tells a team member immediately after a client meeting that the way they framed the proposal's risk section landed exceptionally well, and the client said so directly, that feedback is doing something specific: it's connecting a behavior to a consequence in a way that makes the behavior more likely to appear again.</p>
+ 
+      <p>What makes this reinforcement rather than just a compliment is specificity and proximity. Not "great meeting" — which identifies nothing — but the exact behavior, connected to the exact outcome, delivered close enough in time that the connection is legible. The research on this is consistent: reinforcement that is immediate and specific produces substantially different outcomes than reinforcement that is delayed or general (Daniels & Bailey, 2014).</p>
+ 
+      <p>Most organizations under-invest in this function. Positive feedback is either absent, or it arrives in the wrong format at the wrong time — aggregated into a performance review months after the behavior that warranted it.</p>
+ 
+      <hr class="post-divider" />
+ 
+      <h2>The Second Function: Instruction</h2>
+ 
+      <p>The second function is instructive: establishing what to do differently. This is what most corrective feedback attempts and what most corrective feedback fails to achieve, because it operates at the wrong level of specificity.</p>
+ 
+      <p>"You need to communicate more proactively" is not instructive feedback. It names a direction — more proactive communication — but leaves entirely unspecified what that looks like in practice, when to apply it, and how to know when it's working. Instructive feedback, by contrast, names the exact behavior, the exact situation in which to apply it, and the outcome it's intended to produce. The difference between those two things is not a difference in tone or delivery — it's a difference in whether the feedback can actually guide action.</p>
+ 
+      <p>This matters practically because most corrective feedback in organizations is directional rather than instructive. It tells people something needs to change without telling them, with sufficient precision, what to do instead. The gap between "communicate more proactively" and a specific behavioral protocol for escalating blockers within 24 hours is the gap between feedback that sounds good and feedback that changes what people do on Monday morning.</p>
+ 
+      <hr class="post-divider" />
+ 
+      <h2>The Third Function: Motivation</h2>
+ 
+      <p>The third function is motivational: altering the perceived value of a consequence in a way that changes how much effort someone puts into the behaviors that lead to it. This is the function that most closely resembles what leadership coaching and management training describe as feedback — explaining the stakes, the visibility, the career implications, the organizational significance of a project or a decision.</p>
+ 
+      <p>Done well, motivational feedback can shift how a person approaches their work. Done poorly — or confused with the other two functions — it becomes background noise. "This project is really important to the business" is motivational framing. It may or may not land depending on a dozen contextual factors that have nothing to do with how it's delivered. It cannot substitute for specific behavioral feedback, and it cannot repair the damage done by absent or misaligned reinforcement systems.</p>
+ 
+      <hr class="post-divider" />
+ 
+      <h2>Why Collapsing These Functions Is Expensive</h2>
+ 
+      <p>Most workplace feedback tries to do all three things simultaneously. In a single annual review, or a single development conversation, a manager attempts to reinforce what's working, correct what isn't, and motivate the person toward future performance — all at once, in a format that satisfies HR compliance requirements and fits into a 60-minute calendar slot.</p>
+ 
+      <p>Each of these functions requires different timing, different specificity, and different structure. Reinforcement requires proximity to the behavior. Instruction requires precision about the alternative. Motivation requires credibility and context. Asking a single conversation to satisfy all three constraints produces a conversation that satisfies none of them adequately.</p>
+ 
+      <p>The result is predictable: well-intentioned feedback that managers dread giving, employees find unhelpful, and HR measures in engagement surveys year after year without seeing meaningful improvement. Not because the people involved are failing, but because the system they're operating is asking a single instrument to do three different jobs.</p>
+ 
+      <hr class="post-divider" />
+ 
+      <p class="post-closing">The starting point for improving feedback in an organization isn't better conversations. It's clarity about which function you're trying to serve in a given moment — and whether the format, timing, and structure you're using is capable of serving it.</p>
+ 
+      <p class="post-closing-question"><strong>Most feedback programs don't fail because managers lack empathy or skill. They fail because they're trying to do three different things at once and succeeding at none of them.</strong></p>
+ 
+      <p class="post-cta-note"><em>If you want to examine what functions your current feedback practices are actually serving — and where the gaps are — the <a href="/resources/feedback-function-diagnostic">Feedback Function Diagnostic</a> is a 10-minute self-audit designed for exactly that.</em></p>
+    `,
+  },
 ];
