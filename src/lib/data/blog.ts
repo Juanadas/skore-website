@@ -23,11 +23,11 @@ export const blogPosts: BlogPost[] = [
     title: 'Quiet Quitting Is Not a Gen Z Problem',
     slug: 'quiet-quitting-not-a-gen-z-problem',
     category: 'Engagement',
-    readTime: 8,
+    readTime: 5,
     excerpt: 'We named the symptom after the generation. We should have named it after the organization. What the data — and three simultaneous truths — actually tell us about disengagement.',
     tags: ['engagement', 'quiet quitting', 'psychological contract', 'organizational design'],
     featured: true,
-    publishedAt: new Date('2026-02-17'),
+    publishedAt: new Date('2026-02-13'),
     author: authors[0],
     content: `
       <p class="post-intro">
@@ -197,11 +197,11 @@ export const blogPosts: BlogPost[] = [
     title: "Organizations Don't Produce What They Declare. They Produce What They Design.",
     slug: 'organizations-produce-what-they-design',
     category: 'Organizational Design',
-    readTime: 7,
+    readTime: 6,
     excerpt: "When something isn't working, we look for who's misaligned. We should be looking at what we built. A different lens for diagnosing organizational behavior.",
     tags: ['organizational design', 'systems thinking', 'culture', 'behavior', 'incentives'],
     featured: false,
-    publishedAt: new Date('2026-02-24'),
+    publishedAt: new Date('2026-02-20'),
     author: authors[0],
     content: `
       <p class="post-intro">
@@ -405,7 +405,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "We keep offering individuals tools to cope with difficult work. The organizations that actually reduce burnout do something different: they make the work less difficult.",
     tags: ['burnout', 'wellbeing', 'organizational design', 'work conditions', 'Maslach'],
     featured: false,
-    publishedAt: new Date('2026-03-03'),
+    publishedAt: new Date('2026-02-27'),
     author: authors[0],
     content: `
       <p class="post-intro">
@@ -575,11 +575,11 @@ export const blogPosts: BlogPost[] = [
     title: 'The Meeting That Could Have Been an Email',
     slug: 'meeting-could-have-been-email',
     category: 'Management',
-    readTime: 7,
+    readTime: 4,
     excerpt: "Everyone knows which meetings waste time. What's less obvious is why managers keep convening them anyway. The answer isn't about efficiency. It's about control.",
     tags: ['meetings', 'management', 'organizational behavior', 'decision making', 'control'],
     featured: false,
-    publishedAt: new Date('2026-03-10'),
+    publishedAt: new Date('2026-03-06'),
     author: authors[0],
     content: `
       <p class="post-intro">
@@ -757,11 +757,11 @@ export const blogPosts: BlogPost[] = [
     title: 'Onboarding: The Difference Between Paper and Integration',
     slug: 'onboarding-paper-vs-integration',
     category: 'Talent',
-    readTime: 7,
+    readTime: 5,
     excerpt: "Most organizations confuse completing onboarding with completing integration. One is about forms. The other is about whether the person actually lands. The distinction matters more than you think.",
     tags: ['onboarding', 'integration', 'retention', 'talent management', 'first 90 days'],
     featured: false,
-    publishedAt: new Date('2026-03-17'),
+    publishedAt: new Date('2026-03-13'),
     author: authors[0],
     content: `
       <p class="post-intro">
@@ -938,11 +938,11 @@ export const blogPosts: BlogPost[] = [
     title: 'Diversity Without Inclusion Is Just Headcount',
     slug: 'diversity-without-inclusion',
     category: 'Culture',
-    readTime: 7,
+    readTime: 5,
     excerpt: "When representation is the sole metric, organizations optimize for who shows up. The question that determines whether they stay — and whether they thrive — is entirely different.",
     tags: ['DEI', 'inclusion', 'diversity', 'belonging', 'organizational culture'],
     featured: false,
-    publishedAt: new Date('2026-03-24'),
+    publishedAt: new Date('2026-03-20'),
     author: authors[0],
     content: `
       <p class="post-intro">
@@ -1116,17 +1116,17 @@ export const blogPosts: BlogPost[] = [
     `,
   },
 
-  // POST 7 — DEI
+  // POST 7 — Feedback
   {
     id: '7',
     title: 'The Three Things We Call Feedback (And Why Confusing Them Keeps Organizations Stuck)',
     slug: 'three-functions-of-feedback',
     category: 'Performance',
-    readTime: 8,
+    readTime: 4,
     excerpt: 'Most organizations treat feedback as a single thing — a skill to improve, a culture to build, a conversation to have better. But behavioral science distinguishes at least three distinct functions that we routinely collapse into one. That collapse is expensive.',
     tags: ['feedback', 'behavioral science', 'performance management', 'HR fundamentals', 'organizational design'],
     featured: false,
-    publishedAt: new Date('2026-03-31'),
+    publishedAt: new Date('2026-03-23'),
     author: authors[0],
     content: `
       <p class="post-intro">Ask ten HR professionals what good feedback looks like and you'll get ten versions of the same answer: specific, timely, constructive, delivered with empathy. The advice is consistent. The results, in most organizations, are not.</p>
